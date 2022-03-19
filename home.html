@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="with=device-width, initial scale=1.0" charset="utf-8">
+        <title>Courtney's Portfolio</title>
+        <link id="themeTest" rel="stylesheet" href="lightMode.css">
+        <!--I could only get the light/dark mode to chaneg stylesheets using inline script-->
+        <!--changing the button text does work in an external js file-->
+        <script>
+            function uBetterWorkB() { 
+            // Gets an array of all <link> elements. 
+            // Selects the element using indexing. 
+            var themeTest = document.getElementsByTagName('link')[0]; 
+
+            // if the stylesheet is light, it switches to dark css. If not, it switches to light css.
+            if (themeTest.getAttribute('href') == 'lightMode.css') { 
+                themeTest.setAttribute('href', 'darkMode.css');
+                document.querySelector('#modeButton').innerText = 'Light Mode';
+            } else { 
+                themeTest.setAttribute('href', 'lightMode.css');
+                document.querySelector('#modeButton').innerText = 'Dark Mode';
+            } 
+        } 
+        </script>
+        <!--idk why but the dark/light mode only works inline so here's the rest of the javascript-->
+        <script src="main.js"></script>
+    </head>
+    <body>      
+        <!--button that should do everything-->
+        <button id="modeButton" type="button" onclick="uBetterWork()">Dark Mode</button>
+
+        <div class="topnav">
+            <a href="./home.html">Home</a>
+            <a href="./work.html">Work</a>
+            <a href="./about.html">About Me</a>
+        </div>
+
+        <div class="sidebar">
+            <!--Decide whether name goes above or under photo-->
+            <h2 id="sideName">Hi, I'm Courtney!</h1>
+            <br>
+            <p id="bio">Short bio</p>
+            <br>
+            <a href="./about.html">Read more</a>
+        </div>
+        <br>
+
+        <div class="projects">
+            <!--should be blocks that display the preview of the project and are clickable-->
+            <h2>Projects</h2>
+            <a href="work-BeeBop.html">BeeBop</a>
+            <a href="work-Beanie.html">beanie</a>
+            <!--figure out the wording on the following-->
+            <a href="./work.html">Project Details</a>
+        </div>
+    </body>
+</html>
